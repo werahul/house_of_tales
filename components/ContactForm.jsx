@@ -7,7 +7,7 @@ import { Check, ChevronDown } from "lucide-react";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
-  visible: (i: number) => ({
+  visible: (i) => ({
     opacity: 1,
     y: 0,
     transition: {
@@ -20,7 +20,7 @@ const fadeUp = {
 
 const dayOptions = ["1 Day", "2 Days", "3 Days", "4 Days", "5 Days"];
 
-const ContactForm: React.FC = () => {
+const ContactForm = () => {
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
@@ -30,14 +30,12 @@ const ContactForm: React.FC = () => {
     days: "",
   });
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement>
-  ) => {
+  const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Form submitted:", formData);
   };
@@ -88,7 +86,7 @@ const ContactForm: React.FC = () => {
               <input
                 type={field.type}
                 name={field.name}
-                value={(formData as any)[field.name]}
+                value={formData[field.name]}
                 onChange={handleChange}
                 placeholder={field.placeholder}
                 className="w-full px-0 py-2 text-[12px] border-b border-white bg-transparent outline-none text-white placeholder:text-white/70"
@@ -118,7 +116,7 @@ const ContactForm: React.FC = () => {
             <label className="block mb-1 text-[21px]">No. of Days*</label>
             <Listbox
               value={formData.days}
-              onChange={(value: string) => setFormData((prev) => ({ ...prev, days: value }))}
+              onChange={(value) => setFormData((prev) => ({ ...prev, days: value }))}
             >
               <div className="relative">
                 <Listbox.Button className="w-full text-left bg-transparent border-b border-white py-2 text-white flex items-center justify-between">
@@ -146,7 +144,6 @@ const ContactForm: React.FC = () => {
                 </Listbox.Options>
               </div>
             </Listbox>
-
           </motion.div>
         </div>
 
