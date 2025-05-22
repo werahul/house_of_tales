@@ -118,7 +118,7 @@ const ContactForm: React.FC = () => {
             <label className="block mb-1 text-[21px]">No. of Days*</label>
             <Listbox
               value={formData.days}
-              onChange={(value) => setFormData((prev) => ({ ...prev, days: value }))}
+              onChange={(value: string) => setFormData((prev) => ({ ...prev, days: value }))}
             >
               <div className="relative">
                 <Listbox.Button className="w-full text-left bg-transparent border-b border-white py-2 text-white flex items-center justify-between">
@@ -131,8 +131,7 @@ const ContactForm: React.FC = () => {
                       key={index}
                       value={day}
                       className={({ active, selected }) =>
-                        `cursor-pointer px-4 py-2 flex items-center justify-between text-sm ${
-                          active ? "bg-[#c0bba9]" : ""
+                        `cursor-pointer px-4 py-2 flex items-center justify-between text-sm ${active ? "bg-[#c0bba9]" : ""
                         } ${selected ? "font-medium" : ""}`
                       }
                     >
@@ -147,6 +146,7 @@ const ContactForm: React.FC = () => {
                 </Listbox.Options>
               </div>
             </Listbox>
+
           </motion.div>
         </div>
 
