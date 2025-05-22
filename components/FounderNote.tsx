@@ -18,21 +18,21 @@ const FounderNote = () => {
                 <div className="text-[#EAE7D8] h-[850px] text-left">
                     <h1 className="text-[61px] leading-[73px] mirage pb-5">FOUNDER’S NOTE</h1>
                     <p className="redHat text-[16px] leading-[24px]">
-                        Photography has never just been a career for me- it's something l've felt deeply connected
+                        Photography has never just been a career for me- it&apos;s something l&apos;ve felt deeply connected
                         to since I was a teenager. I picked up the camera out of curiosity, not knowing that it would
                         slowly become such an important part of who I am. What started with capturing random
-                        moments of daily life soon turned into something I couldn't imagine letting
-                        go of. The feeling of freezing a real, unfiltered moment-the joy in someone's eyes, a laugh
+                        moments of daily life soon turned into something I couldn&apos;t imagine letting
+                        go of. The feeling of freezing a real, unfiltered moment-the joy in someone&apos;s eyes, a laugh
                         mid-air, a quiet glance that feeling stuck with me. It made me realize that photography
-                        wasn't just about how something looked, but how it felt. That's when I knew I wanted to
+                        wasn&apos;t just about how something looked, but how it felt. That&apos;s when I knew I wanted to
                         take it seriously. I went on to learn the craft more deeply through formal training in
                         photography and cinematography, and every step since has only made me fall more in love
                         with the art of storytelling through a lens.
 
                         <br /> <br />
-                        Weddings felt like the perfect space to bring that vision to life. They're not just big
-                        celebrations- they're full of raw emotion, warmth, and real connections. Through House of
-                        Tales, I want to document love in its truest form. The kind of tales that don't need filters-just
+                        Weddings felt like the perfect space to bring that vision to life. They&apos;re not just big
+                        celebrations- they&apos;re full of raw emotion, warmth, and real connections. Through House of
+                        Tales, I want to document love in its truest form. The kind of tales that don&apos;t need filters-just
                         honesty, heart, and a little magic. 
                     </p>
                     <div className="flex items-end justify-end pr-10 pt-8">

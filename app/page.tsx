@@ -8,7 +8,6 @@ import FounderNote from "@/components/FounderNote";
 import Header from "@/components/Header";
 import Navbar from "@/components/Navbar";
 import Testimonials from "@/components/Testimonials";
-import Image from "next/image";
 import Footer from "../components/Footer";
 
 const feedImages = [
