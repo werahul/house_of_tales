@@ -18,7 +18,7 @@ const videos = [
     des: "A relaxed, creative shoot reflecting your chemistry, style, and unique love tale.",
   },
   {
-    src: "/Videos/engagements.mp4",
+    src: "/Videos/engagement.mp4",
     label: "Engagements",
     des: "Candid and elegant frames celebrating the joy and love of your special moment.",
   },
@@ -28,7 +28,7 @@ const videos = [
     des: "From haldi to sangeet, we capture the spirit of every heartfelt celebration.",
   },
   {
-    src: "/Videos/customPackage.mp4",
+    src: "/Videos/customPackages.mp4",
     label: "Custom Packages",
     des: "Looking for something more personal? We offer tailored packages made just for you.",
   },
