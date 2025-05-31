@@ -54,7 +54,7 @@ const FAQSection: React.FC = () => {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
       viewport={{ once: true }}
-      className="w-full  lg:py-16 pb-20 px-4"
+      className="w-full  lg:pt-16 pt-20 lg:pb-[100px] pb-20 px-4"
     >
       <h2 className="lg:text-[47px] text-[32px] mirage text-[#34291E] text-center mb-8">FAQS</h2>
       <div className="max-w-3xl mx-auto space-y-[30px]">

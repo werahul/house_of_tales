@@ -42,8 +42,8 @@ const CapturedTales = () => {
                         exit={{ opacity: 0, y: -30, scale: 0.98 }}
                         transition={{ duration: 0.6, ease: "easeInOut" }}
                     >
-                        <img src="/Images/AdityaAndRiya.png" alt="" className='lg:block hidden' />
-                        <img src="/Images/AdityaAndRiyaMobile.png" alt="" className='lg:hidden w-full' />
+                        <img src="/Images/AdityaAndRiya.webp" alt="" className='lg:block hidden' />
+                        <img src="/Images/AdityaAndRiyaMobile.webp" alt="" className='lg:hidden w-full' />
                     </motion.div>
                 )}
 
@@ -55,8 +55,8 @@ const CapturedTales = () => {
                         exit={{ opacity: 0, y: -30, scale: 0.98 }}
                         transition={{ duration: 0.6, ease: "easeInOut" }}
                     >
-                        <img src="/Images/MaitriAndMihir.png" alt="" className='lg:block hidden' />
-                        <img src="/Images/MaitriAndMihirMobile.png" alt="" className='lg:hidden w-full' />
+                        <img src="/Images/MaitriAndMihir.webp" alt="" className='lg:block hidden' />
+                        <img src="/Images/MaitriAndMihirMobile.webp" alt="" className='lg:hidden w-full' />
                     </motion.div>
                 )}
 
@@ -68,8 +68,8 @@ const CapturedTales = () => {
                         exit={{ opacity: 0, y: -30, scale: 0.98 }}
                         transition={{ duration: 0.6, ease: "easeInOut" }}
                     >
-                        <img src="/Images/PriyankAndDwisha.png" alt="" className='lg:block hidden' />
-                        <img src="/Images/PriyankAndDwishaMobile.png" alt="" className='lg:hidden w-full' />
+                        <img src="/Images/PriyankAndDwisha.webp" alt="" className='lg:block hidden' />
+                        <img src="/Images/PriyankAndDwishaMobile.webp" alt="" className='lg:hidden w-full' />
                     </motion.div>
                 )}
 
@@ -81,8 +81,8 @@ const CapturedTales = () => {
                         exit={{ opacity: 0, y: -30, scale: 0.98 }}
                         transition={{ duration: 0.6, ease: "easeInOut" }}
                     >
-                        <img src="/Images/VikasAndSapna.png" alt="" className='lg:block hidden' />
-                        <img src="/Images/VikasAndSapnaMobile.png" alt="" className='lg:hidden w-full' />
+                        <img src="/Images/VikasAndSapna.webp" alt="" className='lg:block hidden' />
+                        <img src="/Images/VikasAndSapnaMobile.webp" alt="" className='lg:hidden w-full' />
                     </motion.div>
                 )}
 
@@ -94,8 +94,8 @@ const CapturedTales = () => {
                         exit={{ opacity: 0, y: -30, scale: 0.98 }}
                         transition={{ duration: 0.6, ease: "easeInOut" }}
                     >
-                        <img src="/Images/ManavAndKarishma.png" alt="" className='lg:block hidden' />
-                        <img src="/Images/ManavAndKarishmaMobile.png" alt="" className='lg:hidden w-full' />
+                        <img src="/Images/ManavAndKarishma.webp" alt="" className='lg:block hidden' />
+                        <img src="/Images/ManavAndKarishmaMobile.webp" alt="" className='lg:hidden w-full' />
                     </motion.div>
                 )}
             </AnimatePresence>

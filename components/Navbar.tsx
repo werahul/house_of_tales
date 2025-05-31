@@ -47,7 +47,7 @@ const Navbar = () => {
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: -100, opacity: 0 }}
           transition={{ duration: 0.4, ease: "easeInOut" }}
-          className="lg:bg-white/20 bg-white lg:backdrop-blur-xs shadow-md fixed top-0 left-0 w-full z-50 redHat"
+          className="lg:bg-white/20 bg-[#EAE7D8] lg:backdrop-blur-xs shadow-md fixed top-0 left-0 w-full z-50 redHat"
         >
           <div className="w-full mx-auto px-4 sm:px-6 lg:px-10 h-[110px] pt-5">
             <div className="flex lg:items-center justify-between h-16">
@@ -63,7 +63,7 @@ const Navbar = () => {
               </div>
 
               {/* Desktop Nav */}
-              <nav className="hidden lg:flex space-x-6 text-[16px] font-medium text-[#34291E]">
+              <nav className="hidden lg:flex space-x-8 text-[16px] font-medium text-[#34291E]">
                 {navItems.map((item) => (
                   <a
                     key={item}

@@ -104,7 +104,7 @@ const Testimonials: React.FC = () => {
   };
 
   return (
-    <section className="lg:pt-[144px] md:pt-20 pt-[80px] pb-20 md:px-10 px-5 max-container">
+    <section className="lg:pt-[144px] md:pt-20 pt-[80px] lg:pb-[104px] pb-20 md:px-10 px-5 max-container">
       <h2 className="lg:text-[47px] text-[32px] mirage text-[#34291E] text-center mb-12">
         LOVE, TOLD BY THEM
       </h2>
@@ -130,7 +130,7 @@ const Testimonials: React.FC = () => {
       </motion.div>
 
       {/* Dots */}
-      <div className="flex justify-center mt-5 space-x-1">
+      <div className="flex justify-center mt-10 space-x-1">
         {Array.from({ length: totalPages }).map((_, index) => (
           <button
             key={index}

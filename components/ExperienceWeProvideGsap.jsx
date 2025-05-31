@@ -99,7 +99,7 @@ const ExperienceWeProvideGsap = () => {
         </div>
 
         <img
-          src="/Images/bridsVec2.png"
+          src="/Images/bridsVec2.webp"
           alt="Brids"
           className="absolute right-5 -top-20 w-[400px] lg:block hidden"
         />

@@ -10,7 +10,7 @@ const Footer = () => {
           {/* Logo */}
           <div className="mb-6 md:mb-0">
             <img
-              src="/Images/footerLogo.png"
+              src="/Images/footerLogo.webp"
               alt="House Of Tales Logo"
               className=""
             />

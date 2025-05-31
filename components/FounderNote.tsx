@@ -67,7 +67,7 @@ const FounderNote = () => {
 
                 <div className="lg:block hidden">
                     <Image
-                        src="/Images/fn1.png"
+                        src="/Images/fn1.webp"
                         width={477}
                         height={590}
                         alt="Founder"
@@ -78,7 +78,7 @@ const FounderNote = () => {
                     <h1 className="lg:text-[61px] text-[44px] text-left lg:leading-[73px] leading-[52px] mirage pb-5 lg:hidden">FOUNDER’S <br /> NOTE</h1>
                     <div className="md:flex md:items-start md:justify-center">
                         <Image
-                            src="/Images/prathamImgMobile.png"
+                            src="/Images/prathamImgMobile.webp"
                             width={477}
                             height={590}
                             alt="Founder"
@@ -98,7 +98,7 @@ const FounderNote = () => {
                 className="absolute bottom-40 left-[45%]"
             >
                 <Image
-                    src="/Images/prathamImg.png"
+                    src="/Images/prathamImg.webp"
                     width={306}
                     height={351}
                     alt="Pratham"

@@ -75,7 +75,7 @@ const ContactForm = () => {
   };
 
   return (
-    <section className="w-full md:min-h-auto min-h-screen flex lg:items-center justify-center bg-[#777461] px-4 py-20">
+    <section className="w-full md:min-h-auto min-h-screen flex lg:items-center justify-center bg-[#777461] px-4 py-20 lg:py-[100px]">
       <motion.form
         initial="hidden"
         whileInView="visible"
@@ -106,7 +106,7 @@ const ContactForm = () => {
           custom={2}
           className="flex justify-center mb-6 md:mb-10"
         >
-          <img src="/Images/bridsVec.png" alt="Doves Icon" />
+          <img src="/Images/bridsVec.webp" alt="Doves Icon" />
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
