@@ -8,7 +8,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const videos = [
   {
-    src: "/Videos/wedding.mp4",
+    src: "/Videos/wedding.MP4",
     label: "Wedding",
     des: "Full-day coverage capturing every emotion and ritual with warmth and authenticity.",
   },

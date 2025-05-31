@@ -42,6 +42,7 @@ const FounderNote = () => {
                             height={44}
                             alt="Signature"
                             className='lg:block hidden'
+                            quality={100}
                         />
                         <Image
                             src="/Images/Signature2.svg"
@@ -49,6 +50,7 @@ const FounderNote = () => {
                             height={44}
                             alt="Signature"
                             className='lg:hidden'
+                            quality={100}
                         />
                     </div>
                 </div>
@@ -72,6 +74,7 @@ const FounderNote = () => {
                         height={590}
                         alt="Founder"
                         className=''
+                        quality={100}
                     />
                 </div>
                 <div className="lg:hidden pt-20">
@@ -83,6 +86,7 @@ const FounderNote = () => {
                             height={590}
                             alt="Founder"
                             className=''
+                            quality={100}
                         />
                     </div>
                 </div>
@@ -103,6 +107,7 @@ const FounderNote = () => {
                     height={351}
                     alt="Pratham"
                     className='lg:block hidden'
+                    quality={100}
                 />
             </motion.div>
         </div>

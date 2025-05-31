@@ -59,6 +59,7 @@ const Navbar = () => {
                   height={110}
                   alt="House of Tales Logo"
                   className="w-[169px] lg:w-[220px] lg:h-[110px]"
+                  quality={100}
                 />
               </div>
 

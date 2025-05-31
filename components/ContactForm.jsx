@@ -106,7 +106,7 @@ const ContactForm = () => {
           custom={2}
           className="flex justify-center mb-6 md:mb-10"
         >
-          <img src="/Images/bridsVec.webp" alt="Doves Icon" />
+          <img src="/Images/bridsVec.svg" alt="Doves Icon" />
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
