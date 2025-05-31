@@ -13,6 +13,34 @@ const Navbar = () => {
 
   const navItems = ["About", "Weddings", "Services", "Contact Us", "FAQs"];
 
+  const navMenuVariants = {
+    hidden: {
+      opacity: 0,
+      x: 100,
+      scale: 0.95,
+      skewX: 5,
+    },
+    visible: {
+      opacity: 1,
+      x: 0,
+      scale: 1,
+      skewX: 0,
+      transition: {
+        duration: 0.6,
+        ease: [0.25, 1, 0.5, 1], // luxury feel
+      },
+    },
+    exit: {
+      opacity: 0,
+      x: 100,
+      scale: 0.95,
+      skewX: 5,
+      transition: {
+        duration: 0.4,
+        ease: [0.4, 0, 0.2, 1],
+      },
+    },
+  };
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
@@ -118,20 +146,28 @@ const Navbar = () => {
           </div>
 
           {/* Mobile Nav */}
-          {isOpen && (
-            <div className="lg:hidden text-center bg-[#EAE7D8] backdrop-blur-md px-4 py-3 space-y-2 text-[20px] text-gray-700">
-              {navItems.map((item) => (
-                <a
-                  key={item}
-                  href={`#${item.toLowerCase().replace(/\s+/g, "-")}`}
-                  className="block"
-                  onClick={() => setIsOpen(false)}
-                >
-                  {item}
-                </a>
-              ))}
-            </div>
-          )}
+          <AnimatePresence>
+            {isOpen && (
+              <motion.div
+                variants={navMenuVariants}
+                initial="hidden"
+                animate="visible"
+                exit="exit"
+                className="lg:hidden text-center bg-[#EAE7D8] backdrop-blur-md px-6 py-6 space-y-4 text-[20px] text-[#34291E] rounded-l-2xl transform-gpu origin-right"
+              >
+                {navItems.map((item) => (
+                  <a
+                    key={item}
+                    href={`#${item.toLowerCase().replace(/\s+/g, "-")}`}
+                    className="block hover:text-black transition duration-300"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {item}
+                  </a>
+                ))}
+              </motion.div>
+            )}
+          </AnimatePresence>
         </motion.header>
       )}
     </AnimatePresence>
