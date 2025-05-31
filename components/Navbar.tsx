@@ -50,9 +50,9 @@ const Navbar = () => {
           className="lg:bg-white/20 bg-[#EAE7D8] lg:backdrop-blur-xs shadow-md fixed top-0 left-0 w-full z-50 redHat"
         >
           <div className="w-full mx-auto px-4 sm:px-6 lg:px-10 h-[110px] pt-5">
-            <div className="flex lg:items-center justify-between h-16">
+            <div className="flex items-center justify-between h-16">
               {/* Logo */}
-              <div className="flex lg:items-center lg:space-x-2">
+              <div className="flex items-center justify-center lg:space-x-2">
                 <Image
                   src="/Images/hotLogo.svg"
                   width={220}
@@ -119,7 +119,7 @@ const Navbar = () => {
 
           {/* Mobile Nav */}
           {isOpen && (
-            <div className="lg:hidden text-center bg-white/10 backdrop-blur-md px-4 py-3 space-y-2 text-[20px] text-gray-700">
+            <div className="lg:hidden text-center bg-[#EAE7D8] backdrop-blur-md px-4 py-3 space-y-2 text-[20px] text-gray-700">
               {navItems.map((item) => (
                 <a
                   key={item}
