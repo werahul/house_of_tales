@@ -43,7 +43,7 @@ const CapturedTales = () => {
                         transition={{ duration: 0.6, ease: "easeInOut" }}
                     >
                         <img src="/Images/AdityaAndRiya.webp" alt="" className='lg:block hidden' />
-                        <img src="/Images/AdityaAndRiyaMobile.jpg" alt="" className='lg:hidden w-full' />
+                        <img src="/Images/AdityaAndRiyaMobile.webp" alt="" className='lg:hidden w-full' />
                     </motion.div>
                 )}
 
@@ -56,7 +56,7 @@ const CapturedTales = () => {
                         transition={{ duration: 0.6, ease: "easeInOut" }}
                     >
                         <img src="/Images/MaitriAndMihir.webp" alt="" className='lg:block hidden' />
-                        <img src="/Images/MaitriAndMihirMobile.jpg" alt="" className='lg:hidden w-full' />
+                        <img src="/Images/MaitriAndMihirMobile.webp" alt="" className='lg:hidden w-full' />
                     </motion.div>
                 )}
 
@@ -69,7 +69,7 @@ const CapturedTales = () => {
                         transition={{ duration: 0.6, ease: "easeInOut" }}
                     >
                         <img src="/Images/PriyankAndDwisha.webp" alt="" className='lg:block hidden' />
-                        <img src="/Images/PriyankAndDwishaMobile.jpg" alt="" className='lg:hidden w-full' />
+                        <img src="/Images/PriyankAndDwishaMobile.webp" alt="" className='lg:hidden w-full' />
                     </motion.div>
                 )}
 
@@ -82,7 +82,7 @@ const CapturedTales = () => {
                         transition={{ duration: 0.6, ease: "easeInOut" }}
                     >
                         <img src="/Images/VikasAndSapna.webp" alt="" className='lg:block hidden' />
-                        <img src="/Images/VikasAndSapnaMobile.jpg" alt="" className='lg:hidden w-full' />
+                        <img src="/Images/VikasAndSapnaMobile.webp" alt="" className='lg:hidden w-full' />
                     </motion.div>
                 )}
 
@@ -95,7 +95,7 @@ const CapturedTales = () => {
                         transition={{ duration: 0.6, ease: "easeInOut" }}
                     >
                         <img src="/Images/ManavAndKarishma.webp" alt="" className='lg:block hidden' />
-                        <img src="/Images/ManavAndKarishmaMobile.jpg" alt="" className='lg:hidden w-full' />
+                        <img src="/Images/ManavAndKarishmaMobile.webp" alt="" className='lg:hidden w-full' />
                     </motion.div>
                 )}
             </AnimatePresence>
