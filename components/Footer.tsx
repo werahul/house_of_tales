@@ -46,7 +46,7 @@ const Footer = () => {
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className="hover:text-black hover:font-bold cursor-pointer transition-all duration-200 text-left"
+                className="hover:text-[#34291E] hover:font-bold cursor-pointer transition-all duration-200 text-left"
               >
                 {item.name}
               </button>
@@ -64,14 +64,14 @@ const Footer = () => {
               <div className="relative w-8 h-8 group cursor-pointer">
                 {/* Outline Icon (default) */}
                 <img
-                  src="/Images/instaIcon.svg"
+                  src="/Images/instaIcon.png"
                   alt="Instagram Icon"
                   className="absolute inset-0 w-[28px] h-[28px] transition-opacity duration-300 ease-in-out opacity-100 group-hover:opacity-0"
                 />
 
                 {/* Filled Icon (on hover) */}
                 <img
-                  src="/Images/instaIconFilled.svg"
+                  src="/Images/instaIconFilled.png"
                   alt="Instagram Icon Filled"
                   className="absolute inset-0 w-[28px] h-[28px] transition-opacity duration-300 ease-in-out opacity-0 group-hover:opacity-100"
                 />

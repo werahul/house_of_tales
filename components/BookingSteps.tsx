@@ -58,11 +58,11 @@ const getIndividualBorderClass = (index: number): string => {
     case 1:
       return "lg:border-r lg:border-b md:border-b md:border-t-0 md:border-r-0 border-t-0 border-l-0 border-r-0 border-b";
     case 2:
-      return "lg:border-b md:border-l-0 border-t-0 border-l-0 border-r-0 border-b";
+      return "lg:border-b md:border-l-0 border-t-0 border-l-0 lg:border-r-0 border-r-0 border-b md:border-r";
     case 3:
       return "lg:border-r lg:border-b-0 md:border-r md:border-r-0 border-t-0 border-l-0 border-r-0 border-b";
     case 4:
-      return "lg:border-r md:border-b-0 md:border-l-0 border-t-0 border-l-0 border-r-0 border-b";
+      return "lg:border-r md:border-b-0 md:border-l-0 border-t-0 border-l-0 border-r-0 border-b md:border-r";
     case 5:
       return "md:border-b-0 md:border-r-0 border-t-0 border-l-0 border-r-0 border-b";
     default:

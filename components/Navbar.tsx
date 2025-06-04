@@ -72,16 +72,25 @@ const Navbar = () => {
           transition={{ duration: 0.4, ease: "easeInOut" }}
           className="lg:bg-white/20 bg-[#EAE7D8] lg:backdrop-blur-xs shadow-md fixed top-0 left-0 w-full z-50 redHat"
         >
-          <div className="w-full mx-auto px-4 sm:px-6 lg:px-10 h-[110px] pt-5">
+          <div className="w-full mx-auto px-4 sm:px-6 lg:px-10 navPadding h-[110px] pt-5 max-container">
             <div className="flex items-center justify-between h-16">
               {/* Logo */}
-              <div className="flex items-center justify-center lg:space-x-2">
+              <div className="flex items-start justify-start lg:space-x-2">
                 <Image
                   src="/Images/hotLogo.svg"
-                  width={220}
+                  width={290}
                   height={110}
                   alt="House of Tales Logo"
-                  className="w-[169px] lg:w-[220px] lg:h-[110px] cursor-pointer"
+                  className=" cursor-pointer lg:block hidden"
+                  quality={100}
+                  onClick={() => scrollToSection("hero")}
+                />
+                <Image
+                  src="/Images/hotLogo.png"
+                  width={160}
+                  height={110}
+                  alt="House of Tales Logo"
+                  className=" cursor-pointer lg:hidden"
                   quality={100}
                   onClick={() => scrollToSection("hero")}
                 />
@@ -93,7 +102,7 @@ const Navbar = () => {
                   <button
                     key={item.id}
                     onClick={() => scrollToSection(item.id)}
-                    className="hover:text-black hover:font-bold transition-all duration-200 cursor-pointer"
+                    className="hover:text-[#34291E] hover:font-bold transition-all duration-200 cursor-pointer"
                   >
                     {item.name}
                   </button>
@@ -161,6 +170,33 @@ const Navbar = () => {
                     {item.name}
                   </button>
                 ))}
+
+                <div className="px-5 pt-10 ">
+                  <a
+                    href="https://www.instagram.com/houseoftalesco?igsh=djhnbjdvY3h0ZnBw"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <div className="relative w-6 h-6 group cursor-pointer lg:hidden">
+                      <img
+                        src="/Images/instaIcon.svg"
+                        alt="Instagram Icon"
+                        className="absolute inset-0 w-6 h-6 transition-opacity duration-300 ease-in-out opacity-100 group-hover:opacity-0"
+                      />
+                     
+                    </div>
+                  </a>
+                  <div className="lg:hidden pt-4">
+                    <a
+                      href="https://wa.me/919106507703"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="bg-[#3B2E22] w-full h-[52px] text-white flex items-center justify-center text-[16px] rounded-md hover:bg-[#271f17] cursor-pointer transition-colors duration-200"
+                    >
+                      Get In Touch
+                    </a>
+                  </div>
+                </div>
 
                 {/* Mobile Menu Close Button */}
                 <button

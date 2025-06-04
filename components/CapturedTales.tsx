@@ -1,8 +1,10 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
+import Skeleton from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
 
 type CoupleName =
   | "Aditya & Riya"
@@ -43,9 +45,14 @@ const coupleImages: Record<CoupleName, { desktop: string; mobile: string }> = {
 };
 
 const CapturedTales = () => {
-  const [selectedCouple, setSelectedCouple] =
-    useState<CoupleName>("Aditya & Riya");
+  const [selectedCouple, setSelectedCouple] = useState<CoupleName>("Aditya & Riya");
+  const [isImageLoaded, setIsImageLoaded] = useState(false);
   const selectedImages = coupleImages[selectedCouple];
+
+  // Reset image load state on couple change
+  useEffect(() => {
+    setIsImageLoaded(false);
+  }, [selectedCouple]);
 
   return (
     <div className="lg:px-10 px-5 lg:pt-[144px] pt-20 max-container">
@@ -53,21 +60,22 @@ const CapturedTales = () => {
         CAPTURED TALES
       </h2>
 
-      {/* Tag Buttons */}
-      <div className="flex lg:justify-center items-center lg:gap-x-[64px] gap-x-[40px] lg:px-44 gap-4 lg:mb-[50px] mb-[30px] lg:overflow-x-hidden overflow-y-hidden overflow-x-scroll">
+      {/* Couple Tags */}
+      <div className="flex lg:justify-center items-center lg:gap-x-[64px] gap-x-[40px] lg:px-44 gap-4 lg:mb-[50px] mb-[30px] lg:overflow-x-hidden overflowScroll overflow-x-scroll scrollbar-hide">
         {couples.map((couple) => (
           <button
             key={couple}
             onClick={() => setSelectedCouple(couple)}
-            className={`text-[21px] whitespace-nowrap  cursor-pointer redHat text-[#34291E] transition-all duration-300 ease-in-out transform hover:scale-[1.02] hover:text-black ${selectedCouple === couple ? "font-bold" : "font-normal"
-              }`}
+            className={`text-[21px] whitespace-nowrap cursor-pointer redHat text-[#34291E] transition-all duration-300 ease-in-out transform hover:scale-[1.02] hover:text-[#34291E] ${
+              selectedCouple === couple ? "font-bold" : "font-normal"
+            }`}
           >
             {couple}
           </button>
         ))}
       </div>
 
-      {/* Content Section */}
+      {/* Image Section */}
       <AnimatePresence mode="wait">
         <motion.div
           key={selectedCouple}
@@ -76,27 +84,39 @@ const CapturedTales = () => {
           exit={{ opacity: 0, y: -30, scale: 0.98 }}
           transition={{ duration: 0.6, ease: "easeInOut" }}
         >
-          {/* Desktop Image */}
-          <div className="lg:block hidden w-full relative">
+          {/* Desktop */}
+          <div className="hidden lg:block w-full relative">
+            {!isImageLoaded && (
+              <Skeleton height={600} className="w-full rounded-xl bg-gray-400" />
+            )}
             <Image
               src={selectedImages.desktop}
               alt={`${selectedCouple} Desktop`}
               width={1920}
               height={1080}
+              className={`w-full h-auto object-cover transition-opacity duration-500 ${
+                isImageLoaded ? "opacity-100" : "opacity-0"
+              }`}
+              onLoad={() => setIsImageLoaded(true)}
               priority
-              className="w-full h-auto object-cover"
             />
           </div>
 
-          {/* Mobile Image */}
+          {/* Mobile */}
           <div className="lg:hidden w-full relative">
+            {!isImageLoaded && (
+              <Skeleton height={500} className="w-full rounded-xl" />
+            )}
             <Image
               src={selectedImages.mobile}
               alt={`${selectedCouple} Mobile`}
               width={800}
               height={1000}
+              className={`w-full h-auto object-cover transition-opacity duration-500 ${
+                isImageLoaded ? "opacity-100" : "opacity-0"
+              }`}
+              onLoad={() => setIsImageLoaded(true)}
               priority
-              className="w-full h-auto object-cover"
             />
           </div>
         </motion.div>

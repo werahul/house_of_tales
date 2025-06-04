@@ -21,11 +21,11 @@ const faqs: FAQItem[] = [
   },
   {
     question: "03. How can we book you?",
-    answer: "It’s simple! Just fill out our inquiry form with a few details about your celebration, and we’ll get in touch shortly. You can also email us at heyhouseoftales@gmail.com or WhatsApp us- we’d love to hear from you!",
+    answer: "It’s simple! Just fill out our inquiry form with a few details about your celebration, and we’ll get in touch shortly. You can also email us at heyhouseoftales@gmail.com or WhatsApp us - we’d love to hear from you!",
   },
   {
     question: "04. What are your deliverables?",
-    answer: "We capture a mix of candid and contemporary photos, focusing on real, heartfelt moments shared by the couple,families, and guests. You’ll receive all your edited photos, a 3–5 minute cinematictrailer, reels (on request), and full film of your wedding and other celebrations like Haldi, Sangeet, etc.",
+    answer: "We capture a mix of candid and contemporary photos, focusing on real, heartfelt moments shared by the couple,families, and guests. You’ll receive all your edited photos, a 3–5 minute cinematic trailer, reels (on request), and full film of your wedding and other celebrations like Haldi, Sangeet, etc.",
   },
   {
     question: "05. What is the delivery timeline?",
@@ -54,7 +54,7 @@ const FAQSection: React.FC = () => {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
       viewport={{ once: true }}
-      className="w-full  lg:pt-16 pt-20 lg:pb-[100px] pb-20 px-4"
+      className="w-full  lg:pt-16 pt-0 lg:pb-[100px] pb-20 px-4"
     >
       <h2 className="lg:text-[47px] text-[32px] mirage text-[#777461] text-center mb-8">FAQS</h2>
       <div className="max-w-3xl mx-auto space-y-[30px]">

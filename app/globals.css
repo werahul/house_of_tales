@@ -104,8 +104,8 @@
 
 .feed-item {
   flex: 0 0 auto;
-  width: 310px;
-  height: 440px;
+  width: 302px;
+  height: 474px;
   border-radius: 4px;
   overflow: hidden;
   backface-visibility: hidden;
@@ -145,5 +145,32 @@
   .feed-item {
     width: 250px;
     height: 388px;
+  }
+}
+
+@media (min-width: 913px) and (max-width: 1024px) {
+  .md-lg\:h-800 {
+    height: 1076px;
+  }
+  .navPadding{
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .founderNoteRightSection{
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+  .bottomAbsolute{
+    bottom: 221px;
+  }
+  .overflowScroll{
+    overflow-x: scroll;
+    padding-left: 266px;
+  }
+}
+
+@media (min-width: 1369px) {
+  .custom-pl-20 {
+    padding-left: 7rem; /* 20 in Tailwind = 5rem */
   }
 }

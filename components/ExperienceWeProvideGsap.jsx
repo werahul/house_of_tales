@@ -150,10 +150,10 @@ const ExperienceWeProvideGsap = () => {
               />
 
               {/* Gradient Overlay */}
-              <div className="absolute bottom-0 w-full h-[40%] bg-gradient-to-t from-black/50 to-transparent z-10 pointer-events-none" />
+              <div className="absolute bottom-0 w-full h-[40%] bg-gradient-to-t from-black/70 to-transparent z-10 pointer-events-none" />
 
               {/* Text over Gradient */}
-              <div className="absolute bottom-0 w-full text-[#EAE7D8] px-4 pt-3 pb-4 z-20">
+              <div className="absolute bottom-0 w-full text-[#EAE7D8] px-6 pt-3 pb-4 z-20">
                 <p className="text-[21px] leading-[28px]">{vid.label}</p>
                 <p className="text-[16px] leading-[24px] mt-1">{vid.des}</p>
               </div>

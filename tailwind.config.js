@@ -11,6 +11,9 @@ module.exports = {
         redHat: ['"Red Hat Display"', "sans-serif"],
       },
     },
+    screens: {
+      lg: "1025px", // customized
+    },
   },
   plugins: [],
 };

@@ -6,16 +6,16 @@ import React from 'react';
 
 const FounderNote = () => {
     return (
-        <div className="flex lg:flex-row flex-col-reverse text-center relative overflow-hidden lg:px-0 px-5">
+        <div className="flex lg:flex-row flex-col-reverse text-center relative overflow-hidden lg:px-0 px-5  ">
             {/* Left Section */}
             <motion.div
                 initial={{ x: -100, opacity: 0 }}
                 whileInView={{ x: 0, opacity: 1 }}
                 transition={{ duration: 1, ease: 'easeOut' }}
                 viewport={{ once: true }}
-                className="lg:w-[55%] lg:bg-[#777461] lg:pl-10 lg:pr-40 lg:pt-[144px] "
+                className="lg:w-[55%] lg:bg-[#777461] lg:pl-10 lg:pr-40 custom-pl-20 lg:pt-[144px] md-lg:h-800 "
             >
-                <div className="lg:text-[#EAE7D8] text-[#34291E] lg:h-[750px] text-left">
+                <div className="lg:text-[#EAE7D8] text-[#34291E] lg:h-[750px] text-left max-w-[600px] mx-auto">
                     <h1 className="lg:text-[61px] text-[44px] lg:leading-[73px] leading-[52px] mirage pb-5 lg:block hidden">FOUNDER’S NOTE</h1>
                     <p className="redHat text-[16px] leading-[24px] lg:pt-0 pt-4">
                         Photography has never just been a career for me- it&apos;s something l&apos;ve felt deeply connected
@@ -62,7 +62,7 @@ const FounderNote = () => {
                 whileInView={{ x: 0, opacity: 1 }}
                 transition={{ duration: 1, ease: 'easeOut', delay: 0.2 }}
                 viewport={{ once: true }}
-                className="lg:w-[45%]  lg:flex lg:items-start lg:justify-center lg:pt-[144px]"
+                className="lg:w-[45%]  lg:flex lg:items-start lg:justify-start lg:pt-[144px] lg:pl-20 founderNoteRightSection"
 
 
             >
@@ -78,7 +78,7 @@ const FounderNote = () => {
                     />
                 </div>
                 <div className="lg:hidden pt-20">
-                    <h1 className="lg:text-[61px] text-[44px] text-left lg:leading-[73px] leading-[52px] mirage pb-5 lg:hidden">FOUNDER’S <br /> NOTE</h1>
+                    <h1 className="lg:text-[61px] text-[#777461] text-[44px] text-left lg:leading-[73px] leading-[52px] mirage pb-5 lg:hidden">FOUNDER’S <br /> NOTE</h1>
                     <div className="md:flex md:items-start md:justify-center">
                         <Image
                             src="/Images/prathamImgMobile.webp"
