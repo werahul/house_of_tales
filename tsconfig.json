@@ -22,6 +22,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "components/ExperienceWeProvide.jsx", "components/ContactForm.jsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "components/ExperienceWeProvide.jsx", "components/ContactForm.jsx", "components/ExperienceWeProvideGsapMobile.jsx"],
   "exclude": ["node_modules"]
 }

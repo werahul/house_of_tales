@@ -2,6 +2,7 @@ import BookingSteps from "@/components/BookingSteps";
 import CapturedTales from "@/components/CapturedTales";
 import ContactForm from "@/components/ContactForm";
 import ExperienceWeProvideGsap from "@/components/ExperienceWeProvideGsap";
+import ExperienceWeProvideGsapMobile from "@/components/ExperienceWeProvideGsapMobile";
 import FAQSection from "@/components/FAQSection";
 import FeedGallery from "@/components/FeedGallery";
 import FounderNote from "@/components/FounderNote";
@@ -53,7 +54,12 @@ export default function Home() {
 
       {/* Services/Weddings Section */}
       <SectionWrapper id="weddings">
-        <ExperienceWeProvideGsap />
+        <div className="lg:block hidden">
+          <ExperienceWeProvideGsap />
+        </div>
+        <div className="lg:hidden">
+          <ExperienceWeProvideGsapMobile />
+        </div>
       </SectionWrapper>
 
       {/* Services Section */}

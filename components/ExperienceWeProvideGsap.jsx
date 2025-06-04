@@ -162,7 +162,7 @@ const ExperienceWeProvideGsap = () => {
         </div>
 
         {/* Mobile Stack */}
-        <div className="grid lg:hidden grid-cols-1 gap-6 lg:px-10 px-5">
+        <div className="hidden grid-cols-1 gap-6 lg:px-10 px-5">
           {videos.map((vid, i) => (
             <div
               key={i}
@@ -175,7 +175,7 @@ const ExperienceWeProvideGsap = () => {
                 playsInline
                 loop
                 preload="auto" // <-- change from "none" to "auto"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover min-h-[1px] opacity-100"
                 src={vid.src}
               />
 
