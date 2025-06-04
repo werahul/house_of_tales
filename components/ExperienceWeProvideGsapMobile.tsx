@@ -88,7 +88,6 @@ const ExperienceWeProvideGsapMobile = () => {
               playsInline
               loop
               preload="auto"
-              poster={vid.poster}
               className="w-full h-full object-cover min-h-[1px] opacity-100"
               src={vid.src}
             />
