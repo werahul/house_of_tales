@@ -6,16 +6,24 @@ export async function POST(req) {
 
   const userEmail = process.env.NEXT_PUBLIC_USER_EMAIL;
   const userPassword = process.env.NEXT_PUBLIC_USER_PASSWORD;
-  
+
   // Format current date for the email
-  const submissionDate = new Date().toLocaleString();
+  const submissionDate = new Date().toLocaleString("en-IN", {
+    timeZone: "Asia/Kolkata",
+    day: "2-digit",
+    month: "long",
+    year: "numeric",
+    hour: "2-digit",
+    minute: "2-digit",
+    hour12: true,
+  });
 
   try {
     const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
         user: userEmail,
-        pass: userPassword, 
+        pass: userPassword,
       },
     });
 
@@ -131,6 +139,9 @@ export async function POST(req) {
     return new Response(JSON.stringify({ success: true }), { status: 200 });
   } catch (error) {
     console.error("Error sending email:", error);
-    return new Response(JSON.stringify({ success: false, error: error.message }), { status: 500 });
+    return new Response(
+      JSON.stringify({ success: false, error: error.message }),
+      { status: 500 }
+    );
   }
 }
