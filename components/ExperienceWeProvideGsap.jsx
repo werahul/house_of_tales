@@ -174,9 +174,8 @@ const ExperienceWeProvideGsap = () => {
                 autoPlay
                 playsInline
                 loop
-                preload="none"
+                preload="auto" // <-- change from "none" to "auto"
                 className="w-full h-full object-cover"
-                poster={vid.poster}
                 src={vid.src}
               />
 

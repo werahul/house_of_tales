@@ -171,7 +171,7 @@ const Navbar = () => {
                   </button>
                 ))}
 
-                <div className="px-5 pt-10 ">
+                <div className="px-5 pt-5 ">
                   <a
                     href="https://www.instagram.com/houseoftalesco?igsh=djhnbjdvY3h0ZnBw"
                     target="_blank"
