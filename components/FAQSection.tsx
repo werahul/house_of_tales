@@ -56,7 +56,7 @@ const FAQSection: React.FC = () => {
       viewport={{ once: true }}
       className="w-full  lg:pt-16 pt-20 lg:pb-[100px] pb-20 px-4"
     >
-      <h2 className="lg:text-[47px] text-[32px] mirage text-[#34291E] text-center mb-8">FAQS</h2>
+      <h2 className="lg:text-[47px] text-[32px] mirage text-[#777461] text-center mb-8">FAQS</h2>
       <div className="max-w-3xl mx-auto space-y-[30px]">
         {faqs.map((faq, index) => (
           <motion.div

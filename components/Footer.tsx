@@ -87,14 +87,14 @@ const Footer = () => {
               <div className="relative w-8 h-8 group cursor-pointer">
                 {/* Outline Icon (default) */}
                 <img
-                  src="/Images/mail.png"
+                  src="/Images/mail.svg"
                   alt="Mail Icon"
                   className="absolute inset-0 w-[28px] h-[28px] transition-opacity duration-300 ease-in-out opacity-100 group-hover:opacity-0"
                 />
 
                 {/* Filled Icon (on hover) */}
                 <img
-                  src="/Images/mailFilled.png"
+                  src="/Images/mailFilled.svg"
                   alt="Mail Icon Filled"
                   className="absolute inset-0 w-[28px] h-[28px] transition-opacity duration-300 ease-in-out opacity-0 group-hover:opacity-100"
                 />
