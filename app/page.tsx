@@ -49,11 +49,14 @@ export default function Home() {
       {/* About Section */}
       <SectionWrapper id="about">
         <FounderNote />
+      </SectionWrapper>
+
+      <SectionWrapper id="weddings">
         <CapturedTales />
       </SectionWrapper>
 
       {/* Services/Weddings Section */}
-      <SectionWrapper id="weddings">
+      <SectionWrapper id="services">
         <div className="lg:block hidden">
           <ExperienceWeProvideGsap />
         </div>
@@ -63,7 +66,7 @@ export default function Home() {
       </SectionWrapper>
 
       {/* Services Section */}
-      <SectionWrapper id="services">
+      <SectionWrapper id="">
         <BookingSteps />
         <Testimonials />
       </SectionWrapper>

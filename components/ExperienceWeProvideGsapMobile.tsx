@@ -63,7 +63,7 @@ const ExperienceWeProvideGsapMobile = () => {
           From Ahmedabad, with heart - to wherever your tale unfolds
         </p>
         <div className="flex lg:items-start items-center lg:justify-start justify-center">
-          <a href="https://wa.me/919106507703" target="_blank">
+          <a href="https://wa.me/+919106507703" target="_blank">
             <button className="w-[134px] h-[48px] border border-[#413326] bg-transparent rounded-[8px] text-[#413326] hover:bg-[#271f17] hover:text-white active:scale-95 transition-all duration-200 ease-in-out shadow-sm hover:shadow-md">
               Get In Touch
             </button>

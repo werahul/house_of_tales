@@ -1,39 +1,39 @@
 "use client";
 
-import React from 'react';
-import { motion } from 'framer-motion';
+import React from "react";
+import { motion } from "framer-motion";
 
 const steps = [
   {
-    title: '1. Inquiry & Connection',
+    title: "1. Inquiry & Connection",
     description:
       "Get in touch with us and share your event details. We’ll respond quickly to understand your needs and vision.",
   },
   {
-    title: '2. Reserve Your Date',
+    title: "2. Reserve Your Date",
     description:
-      'Secure your date with ease. Once confirmed, our team is fully dedicated to your celebration.',
+      "Secure your date with ease. Once confirmed, our team is fully dedicated to your celebration.",
     highlight: true,
   },
   {
-    title: '3. Getting to Know You',
+    title: "3. Getting to Know You",
     description:
-      'We learn your story, style preferences, and vision–share photography references if you have any!',
+      "We learn your story, style preferences, and vision–share photography references if you have any!",
   },
   {
-    title: '4. Creative Planning',
+    title: "4. Creative Planning",
     description:
-      'We plan everything from timelines to key moments. Need location ideas? We’ve got suggestions.',
+      "We plan everything from timelines to key moments. Need location ideas? We’ve got suggestions.",
   },
   {
-    title: '5. Showtime',
+    title: "5. Showtime",
     description:
-      'Your big day arrives, we capture every celebration, emotion, detail, and joyful moments.',
+      "Your big day arrives, we capture every celebration, emotion, detail, and joyful moments.",
   },
   {
-    title: '6. Post-Production & Delivery',
+    title: "6. Post-Production & Delivery",
     description:
-      'Your photos and films are carefully edited with love and delivered in a digital gallery.',
+      "Your photos and films are carefully edited with love and delivered in a digital gallery.",
   },
 ];
 
@@ -72,7 +72,7 @@ const getIndividualBorderClass = (index: number): string => {
 
 const BookingSteps: React.FC = () => {
   return (
-    <div className="pt-20  lg:pt-[144px] md:px-10 px-5 max-container">
+    <div className="pt-20  lg:pt-[60px] md:px-10 px-5 max-container">
       <h2 className="lg:text-[47px] text-[32px] mirage text-[#777461] text-center md:mb-8 mb-4">
         FROM BOOKING TO BEAUTIFUL MOMENTS
       </h2>
@@ -81,7 +81,9 @@ const BookingSteps: React.FC = () => {
         {steps.map((step, index) => (
           <motion.div
             key={index}
-            className={`group transition-all duration-300 p-8 sm:p-12 md:p-16 border border-[#52514C] bg-transparent hover:bg-[#777461] ${getIndividualBorderClass(index)}`}
+            className={`group transition-all duration-300 p-8 sm:p-12 md:p-16 border border-[#52514C] bg-transparent hover:bg-[#777461] ${getIndividualBorderClass(
+              index
+            )}`}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}
