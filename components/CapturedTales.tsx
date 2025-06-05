@@ -61,7 +61,7 @@ const CapturedTales = () => {
       </h2>
 
       {/* Couple Tags */}
-      <div className="flex lg:justify-center items-center lg:gap-x-[64px] gap-x-[40px] lg:px-44 gap-4 lg:mb-[50px] mb-[30px] lg:overflow-x-hidden overflowScroll overflow-x-scroll scrollbar-hide">
+      <div className="flex lg:justify-center items-center lg:gap-x-[64px] gap-x-[40px] lg:px-44 gap-4 lg:mb-[50px] mb-[30px] lg:overflow-x-hidden lg:overflow-y-hidden overflowScroll overflow-x-scroll scrollbar-hide">
         {couples.map((couple) => (
           <button
             key={couple}
