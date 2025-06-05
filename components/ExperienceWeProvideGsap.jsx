@@ -40,6 +40,7 @@ const ExperienceWeProvideGsap = () => {
   const scrollSectionRef = useRef(null);
   const itemRefs = useRef([]);
   const [windowWidth, setWindowWidth] = useState(0);
+  const [isIOS, setIsIOS] = useState(false);
 
   // Use framer-motion's scroll utilities
   const { scrollYProgress } = useScroll({
@@ -48,11 +49,19 @@ const ExperienceWeProvideGsap = () => {
   });
 
   // Calculate the total width - similar to the original GSAP calculation
-  const totalWidth = videos.length * 519 + (videos.length - 1) * 130; // 519px card + 100px gap
+  const totalWidth = videos.length * 519 + (videos.length - 1) * 130; // 519px card + 130px gap
 
   useEffect(() => {
     // Set window width after component mounts (client-side only)
     setWindowWidth(window.innerWidth);
+
+    // Detect iOS devices
+    const detectIOS = () => {
+      const userAgent = window.navigator.userAgent.toLowerCase();
+      return /iphone|ipad|ipod/.test(userAgent);
+    };
+
+    setIsIOS(detectIOS());
 
     // Handle window resize
     const handleResize = () => {
@@ -60,8 +69,33 @@ const ExperienceWeProvideGsap = () => {
     };
 
     window.addEventListener("resize", handleResize);
+
+    // iOS video playback workaround
+    if (detectIOS()) {
+      const handleUserInteraction = () => {
+        document.querySelectorAll("video").forEach((video) => {
+          // Only attempt to play videos with data-loaded="true"
+          if (video.getAttribute("data-loaded") === "true") {
+            video.play().catch((e) => {
+              console.log("iOS video play error:", e);
+            });
+          }
+        });
+      };
+
+      // Add event listeners for user interaction
+      ["touchstart", "click"].forEach((event) => {
+        document.addEventListener(event, handleUserInteraction, { once: true });
+      });
+    }
+
     return () => {
       window.removeEventListener("resize", handleResize);
+      if (detectIOS()) {
+        ["touchstart", "click"].forEach((event) => {
+          document.removeEventListener(event, () => {}, { once: true });
+        });
+      }
     };
   }, []);
 
@@ -69,8 +103,14 @@ const ExperienceWeProvideGsap = () => {
   const x = useTransform(
     scrollYProgress,
     [0, 1],
-    windowWidth ? [-totalWidth + windowWidth - 80, 0] : [0, 0]
+    windowWidth ? [-totalWidth + windowWidth - 140, 0] : [0, 0]
   );
+
+  // Video loading handler
+  const handleVideoLoad = (e) => {
+    // Mark video as loaded
+    e.target.setAttribute("data-loaded", "true");
+  };
 
   return (
     <div className="overflow-hidden lg:pb-8 lg:pt-[144px] pt-20 relative">
@@ -102,21 +142,30 @@ const ExperienceWeProvideGsap = () => {
       >
         <motion.div
           style={{ x }}
-          className="flex space-x-[100px] px-[calc((100vw-1368px)/2)] h-full"
+          className="flex space-x-[130px] px-[calc((100vw-1368px)/2)] h-full"
         >
           {videos.map((vid, i) => (
             <div
               key={i}
               ref={(el) => (itemRefs.current[i] = el)}
               className="group relative min-w-[519px] min-h-[519px] overflow-hidden rounded-[4px]"
-              onMouseEnter={(e) =>
-                e.currentTarget.querySelector("video")?.play()
-              }
+              onMouseEnter={(e) => {
+                if (!isIOS) {
+                  const video = e.currentTarget.querySelector("video");
+                  if (video && video.getAttribute("data-loaded") === "true") {
+                    video
+                      .play()
+                      .catch((err) => console.log("Play error:", err));
+                  }
+                }
+              }}
               onMouseLeave={(e) => {
-                const video = e.currentTarget.querySelector("video");
-                if (video) {
-                  video.pause();
-                  video.currentTime = 0;
+                if (!isIOS) {
+                  const video = e.currentTarget.querySelector("video");
+                  if (video) {
+                    video.pause();
+                    video.currentTime = 0;
+                  }
                 }
               }}
             >
@@ -127,7 +176,9 @@ const ExperienceWeProvideGsap = () => {
                 className="w-full h-full object-cover"
                 muted
                 playsInline
-                preload="none"
+                data-loaded="false"
+                onLoadedData={handleVideoLoad}
+                preload="metadata"
               />
 
               {/* Gradient Overlay */}
@@ -153,12 +204,15 @@ const ExperienceWeProvideGsap = () => {
             {/* Autoplaying video on mobile */}
             <video
               muted
-              autoPlay
+              autoPlay={!isIOS}
               playsInline
               loop
-              preload="auto"
+              data-loaded="false"
+              onLoadedData={handleVideoLoad}
+              preload="metadata"
               className="w-full h-full object-cover min-h-[1px] opacity-100"
               src={vid.src}
+              poster={vid.poster}
             />
 
             {/* Gradient Overlay */}
