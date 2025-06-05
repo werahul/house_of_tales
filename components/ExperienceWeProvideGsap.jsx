@@ -1,35 +1,35 @@
 "use client";
 
-import React, { useRef, useState, useEffect } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef, useState, useEffect } from "react";
+import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 
 const videos = [
   {
-    src: "https://ik.imagekit.io/4sivuylcu/wedding.MP4?updatedAt=1748887090322",
+    src: "https://res.cloudinary.com/djyfs0b0i/video/upload/v1749129986/wedding_yrmih6.mp4",
     label: "Wedding",
     des: "Full-day coverage capturing every emotion and ritual with warmth and authenticity.",
     poster: "/Posters/wed.png",
   },
   {
-    src: "https://ik.imagekit.io/4sivuylcu/preWedding.mp4/ik-video.mp4?updatedAt=1748887092913",
+    src: "https://res.cloudinary.com/djyfs0b0i/video/upload/v1749129972/preWedding_zl7zul.mp4",
     label: "Pre-Weddings",
     des: "A relaxed, creative shoot reflecting your chemistry, style, and unique love tale.",
     poster: "/Posters/pre.png",
   },
   {
-    src: "https://ik.imagekit.io/4sivuylcu/engagement.mp4/ik-video.mp4?updatedAt=1748887092671",
+    src: "https://res.cloudinary.com/djyfs0b0i/video/upload/v1749129963/engagement_qrbn2t.mp4",
     label: "Engagements",
     des: "Candid and elegant frames celebrating the joy and love of your special moment.",
     poster: "/Posters/eg.png",
   },
   {
-    src: "https://ik.imagekit.io/4sivuylcu/specialEvents.mp4?updatedAt=1748887099815",
+    src: "https://res.cloudinary.com/djyfs0b0i/video/upload/v1749129983/specialEvents_o8wr2w.mp4",
     label: "Special Events",
     des: "From haldi to sangeet, we capture the spirit of every heartfelt celebration.",
     poster: "/Posters/se.png",
   },
   {
-    src: "https://ik.imagekit.io/4sivuylcu/customPackages.mp4/ik-video.mp4?updatedAt=1748887092797",
+    src: "https://res.cloudinary.com/djyfs0b0i/video/upload/v1749129976/customPackages_oveshz.mp4",
     label: "Custom Packages",
     des: "Looking for something more personal? We offer tailored packages made just for you.",
     poster: "/Posters/cp.png",
@@ -42,14 +42,19 @@ const ExperienceWeProvideGsap = () => {
   const [windowWidth, setWindowWidth] = useState(0);
   const [isIOS, setIsIOS] = useState(false);
 
-  // Use framer-motion's scroll utilities
+  // Reduced gap between items from 130px to 60px
+  const GAP_SIZE = 60;
+  const CARD_WIDTH = 519;
+
+  // Use framer-motion's scroll utilities with improved configuration
   const { scrollYProgress } = useScroll({
     target: scrollSectionRef,
     offset: ["start start", "end end"],
   });
 
-  // Calculate the total width - similar to the original GSAP calculation
-  const totalWidth = videos.length * 519 + (videos.length - 1) * 130; // 519px card + 130px gap
+  // Calculate the total width with reduced gap
+  const totalWidth =
+    videos.length * CARD_WIDTH + (videos.length - 1) * GAP_SIZE;
 
   useEffect(() => {
     // Set window width after component mounts (client-side only)
@@ -100,11 +105,18 @@ const ExperienceWeProvideGsap = () => {
   }, []);
 
   // Transform the scroll progress to x-position - only calculated after window is available
-  const x = useTransform(
+  const rawX = useTransform(
     scrollYProgress,
     [0, 1],
     windowWidth ? [-totalWidth + windowWidth - 140, 0] : [0, 0]
   );
+
+  // Add spring physics for smoother animation
+  const x = useSpring(rawX, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001,
+  });
 
   // Video loading handler
   const handleVideoLoad = (e) => {
@@ -122,7 +134,7 @@ const ExperienceWeProvideGsap = () => {
           From Ahmedabad, with heart - to wherever your tale unfolds
         </p>
         <div className="flex lg:items-start items-center lg:justify-start justify-center">
-          <a href="https://wa.me/919106507703" target="_blank">
+          <a href="https://wa.me/919106507703" target="_blank" rel="noreferrer">
             <button className="w-[134px] h-[48px] border border-[#413326] bg-transparent rounded-[8px] text-[#413326] hover:bg-[#271f17] hover:text-white active:scale-95 transition-all duration-200 ease-in-out shadow-sm hover:shadow-md">
               Get In Touch
             </button>
@@ -135,14 +147,14 @@ const ExperienceWeProvideGsap = () => {
         />
       </div>
 
-      {/* Desktop Scroll Section */}
+      {/* Desktop Scroll Section with improved animation */}
       <div
         ref={scrollSectionRef}
         className="relative h-[calc(100vh-200px)] lg:block hidden"
       >
         <motion.div
           style={{ x }}
-          className="flex space-x-[130px] px-[calc((100vw-1368px)/2)] h-full"
+          className={`flex space-x-[60px] px-[calc((100vw-1300px)/2)] h-full`}
         >
           {videos.map((vid, i) => (
             <div

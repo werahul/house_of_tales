@@ -4,31 +4,31 @@ import React, { useEffect } from "react";
 
 const videos = [
   {
-    src: "https://ik.imagekit.io/4sivuylcu/wedding.MP4?updatedAt=1748887090322",
+    src: "https://res.cloudinary.com/djyfs0b0i/video/upload/v1749129986/wedding_yrmih6.mp4",
     label: "Wedding",
     des: "Full-day coverage capturing every emotion and ritual with warmth and authenticity.",
     poster: "/Posters/wed.png",
   },
   {
-    src: "https://ik.imagekit.io/4sivuylcu/preWedding.mp4?updatedAt=1748887092913",
+    src: "https://res.cloudinary.com/djyfs0b0i/video/upload/v1749129972/preWedding_zl7zul.mp4",
     label: "Pre-Weddings",
     des: "A relaxed, creative shoot reflecting your chemistry, style, and unique love tale.",
     poster: "/Posters/pre.png",
   },
   {
-    src: "https://ik.imagekit.io/4sivuylcu/engagement.mp4?updatedAt=1748887092671",
+    src: "https://res.cloudinary.com/djyfs0b0i/video/upload/v1749129963/engagement_qrbn2t.mp4",
     label: "Engagements",
     des: "Candid and elegant frames celebrating the joy and love of your special moment.",
     poster: "/Posters/eg.png",
   },
   {
-    src: "https://ik.imagekit.io/4sivuylcu/specialEvents.mp4?updatedAt=1748887099815",
+    src: "https://res.cloudinary.com/djyfs0b0i/video/upload/v1749129983/specialEvents_o8wr2w.mp4",
     label: "Special Events",
     des: "From haldi to sangeet, we capture the spirit of every heartfelt celebration.",
     poster: "/Posters/se.png",
   },
   {
-    src: "https://ik.imagekit.io/4sivuylcu/customPackages.mp4?updatedAt=1748887092797",
+    src: "https://res.cloudinary.com/djyfs0b0i/video/upload/v1749129976/customPackages_oveshz.mp4",
     label: "Custom Packages",
     des: "Looking for something more personal? We offer tailored packages made just for you.",
     poster: "/Posters/cp.png",
@@ -71,7 +71,7 @@ const ExperienceWeProvideGsapMobile = () => {
         </div>
         <img
           src="/Images/bridsVec2.webp"
-          alt="Brids"
+          alt="Birds"
           className="absolute right-5 -top-20 w-[400px] lg:block hidden"
         />
       </div>
