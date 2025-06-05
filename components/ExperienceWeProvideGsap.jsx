@@ -1,10 +1,7 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
-import gsap from "gsap";
-import ScrollTrigger from "gsap/dist/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger);
+import React, { useRef, useState, useEffect } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 
 const videos = [
   {
@@ -40,59 +37,40 @@ const videos = [
 ];
 
 const ExperienceWeProvideGsap = () => {
-  const containerRef = useRef();
-  const scrollSectionRef = useRef();
+  const scrollSectionRef = useRef(null);
   const itemRefs = useRef([]);
+  const [windowWidth, setWindowWidth] = useState(0);
+
+  // Use framer-motion's scroll utilities
+  const { scrollYProgress } = useScroll({
+    target: scrollSectionRef,
+    offset: ["start start", "end end"],
+  });
+
+  // Calculate the total width - similar to the original GSAP calculation
+  const totalWidth = videos.length * 519 + (videos.length - 1) * 130; // 519px card + 100px gap
 
   useEffect(() => {
-    const scrollSection = scrollSectionRef.current;
-    const container = containerRef.current;
+    // Set window width after component mounts (client-side only)
+    setWindowWidth(window.innerWidth);
 
-    setTimeout(() => ScrollTrigger.refresh(), 200);
+    // Handle window resize
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
 
-    ScrollTrigger.matchMedia({
-      "(max-width: 768px)": () => {
-        gsap.killTweensOf(itemRefs.current);
-      },
-
-      "(min-width: 769px)": () => {
-        const totalWidth =
-          itemRefs.current.length * 519 + (itemRefs.current.length - 1) * 80; // 519px card + 80px gap
-
-        gsap.fromTo(
-          container,
-          { x: 0 },
-          {
-            x: () =>
-              `-${
-                totalWidth -
-                window.innerWidth +
-                (window.innerWidth - 1368) / 2 +
-                80
-              }`,
-            ease: "power2.inOut",
-            scrollTrigger: {
-              trigger: scrollSection,
-              start: "top top",
-              end: `+=${totalWidth}`,
-              scrub: 1,
-              pin: true,
-              anticipatePin: 1,
-              invalidateOnRefresh: true,
-            },
-          }
-        );
-      },
-    });
-
-    const handleResize = () => ScrollTrigger.refresh();
     window.addEventListener("resize", handleResize);
-
     return () => {
       window.removeEventListener("resize", handleResize);
-      ScrollTrigger.getAll().forEach((st) => st.kill());
     };
   }, []);
+
+  // Transform the scroll progress to x-position - only calculated after window is available
+  const x = useTransform(
+    scrollYProgress,
+    [0, 1],
+    windowWidth ? [-totalWidth + windowWidth - 80, 0] : [0, 0]
+  );
 
   return (
     <div className="overflow-hidden lg:pb-8 lg:pt-[144px] pt-20 relative">
@@ -118,16 +96,19 @@ const ExperienceWeProvideGsap = () => {
       </div>
 
       {/* Desktop Scroll Section */}
-      <div ref={scrollSectionRef} className="relative">
-        <div
-          ref={containerRef}
-          className="hidden lg:flex space-x-[0px] px-[calc((100vw-1368px)/2)]"
+      <div
+        ref={scrollSectionRef}
+        className="relative h-[calc(100vh-200px)] lg:block hidden"
+      >
+        <motion.div
+          style={{ x }}
+          className="flex space-x-[100px] px-[calc((100vw-1368px)/2)] h-full"
         >
           {videos.map((vid, i) => (
             <div
               key={i}
               ref={(el) => (itemRefs.current[i] = el)}
-              className="group relative min-w-[519px] min-h-[519px] overflow-hidden rounded-[4px] ml-10"
+              className="group relative min-w-[519px] min-h-[519px] overflow-hidden rounded-[4px]"
               onMouseEnter={(e) =>
                 e.currentTarget.querySelector("video")?.play()
               }
@@ -159,37 +140,37 @@ const ExperienceWeProvideGsap = () => {
               </div>
             </div>
           ))}
-        </div>
+        </motion.div>
+      </div>
 
-        {/* Mobile Stack */}
-        <div className="hidden grid-cols-1 gap-6 lg:px-10 px-5">
-          {videos.map((vid, i) => (
-            <div
-              key={i}
-              className="group relative w-full h-[400px] overflow-hidden rounded-[4px]"
-            >
-              {/* Autoplaying video on mobile */}
-              <video
-                muted
-                autoPlay
-                playsInline
-                loop
-                preload="auto" // <-- change from "none" to "auto"
-                className="w-full h-full object-cover min-h-[1px] opacity-100"
-                src={vid.src}
-              />
+      {/* Mobile Stack */}
+      <div className="hidden grid-cols-1 gap-6 lg:px-10 px-5">
+        {videos.map((vid, i) => (
+          <div
+            key={i}
+            className="group relative w-full h-[400px] overflow-hidden rounded-[4px]"
+          >
+            {/* Autoplaying video on mobile */}
+            <video
+              muted
+              autoPlay
+              playsInline
+              loop
+              preload="auto"
+              className="w-full h-full object-cover min-h-[1px] opacity-100"
+              src={vid.src}
+            />
 
-              {/* Gradient Overlay */}
-              <div className="absolute bottom-0 w-full h-[45%] bg-gradient-to-t from-black/50 to-transparent z-10 pointer-events-none" />
+            {/* Gradient Overlay */}
+            <div className="absolute bottom-0 w-full h-[45%] bg-gradient-to-t from-black/50 to-transparent z-10 pointer-events-none" />
 
-              {/* Text over Gradient */}
-              <div className="absolute bottom-0 w-full text-[#EAE7D8] px-4 pt-3 pb-4 z-20">
-                <p className="text-[21px] leading-[28px]">{vid.label}</p>
-                <p className="text-[16px] leading-[24px] mt-1">{vid.des}</p>
-              </div>
+            {/* Text over Gradient */}
+            <div className="absolute bottom-0 w-full text-[#EAE7D8] px-4 pt-3 pb-4 z-20">
+              <p className="text-[21px] leading-[28px]">{vid.label}</p>
+              <p className="text-[16px] leading-[24px] mt-1">{vid.des}</p>
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
     </div>
   );
