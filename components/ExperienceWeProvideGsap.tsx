@@ -128,9 +128,9 @@ const ExperienceWeProvide = () => {
                     e.currentTarget.currentTime = 0;
                   }}
                 />
-                <div className="absolute bottom-0 w-full bg-gradient-to-t from-black/80 to-transparent py-4 px-6 text-white z-10">
-                  <p className="text-lg font-medium">{vid.label}</p>
-                  <p className="text-sm mt-1 w-[85%]">{vid.des}</p>
+                <div className="absolute bottom-0  w-full bg-gradient-to-t from-black/80 to-transparent py-4 px-6 text-white z-10">
+                  <p className="text-lg font-redHat font-medium">{vid.label}</p>
+                  <p className="text-sm font-redHat mt-1 w-[85%]">{vid.des}</p>
                 </div>
               </div>
             ))}

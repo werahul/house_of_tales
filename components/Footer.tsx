@@ -27,7 +27,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-[#777461] text-[#E1DED3] py-10 redHat">
+    <footer className="bg-[#777461] text-[#E1DED3] py-10 font-redHat">
       <div className="md:px-10 px-5 max-container">
         <div className="lg:flex flex-col md:flex-row lg:items-center lg:justify-between mb-8">
           {/* Logo */}

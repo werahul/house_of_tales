@@ -23,29 +23,40 @@ const couples: CoupleName[] = [
 
 const coupleImages: Record<CoupleName, { desktop: string; mobile: string }> = {
   "Aditya & Riya": {
-    desktop: "https://res.cloudinary.com/djyfs0b0i/image/upload/v1749021097/houseoftales/ta8pchjcd6lebazgmfch.webp",
-    mobile: "https://res.cloudinary.com/djyfs0b0i/image/upload/v1749021103/houseoftales/k9bjoglgc8ub7avkyq7j.png",
+    desktop:
+      "https://res.cloudinary.com/djyfs0b0i/image/upload/v1749021097/houseoftales/ta8pchjcd6lebazgmfch.webp",
+    mobile:
+      "https://res.cloudinary.com/djyfs0b0i/image/upload/v1749021103/houseoftales/k9bjoglgc8ub7avkyq7j.png",
   },
   "Maitri & Mihir": {
-    desktop: "https://res.cloudinary.com/djyfs0b0i/image/upload/v1749021105/houseoftales/jbfqyq1scingl4uzz2vv.webp",
-    mobile: "https://res.cloudinary.com/djyfs0b0i/image/upload/v1749021110/houseoftales/jtpbcanzoqx3jpubhjse.png",
+    desktop:
+      "https://res.cloudinary.com/djyfs0b0i/image/upload/v1749021105/houseoftales/jbfqyq1scingl4uzz2vv.webp",
+    mobile:
+      "https://res.cloudinary.com/djyfs0b0i/image/upload/v1749021110/houseoftales/jtpbcanzoqx3jpubhjse.png",
   },
   "Priyank & Dwisha": {
-    desktop: "https://res.cloudinary.com/djyfs0b0i/image/upload/v1749021094/houseoftales/jrhoneumml7w6wkpdite.webp",
-    mobile: "https://res.cloudinary.com/djyfs0b0i/image/upload/v1749021109/houseoftales/w6mlwywcloxgildghhqg.png",
+    desktop:
+      "https://res.cloudinary.com/djyfs0b0i/image/upload/v1749021094/houseoftales/jrhoneumml7w6wkpdite.webp",
+    mobile:
+      "https://res.cloudinary.com/djyfs0b0i/image/upload/v1749021109/houseoftales/w6mlwywcloxgildghhqg.png",
   },
   "Vikas & Sapna": {
-    desktop: "https://res.cloudinary.com/djyfs0b0i/image/upload/v1749021096/houseoftales/cqxn5o58pee4j7cux8ls.webp",
-    mobile: "https://res.cloudinary.com/djyfs0b0i/image/upload/v1749021103/houseoftales/cyb6rchirwi4yjmhads2.png",
+    desktop:
+      "https://res.cloudinary.com/djyfs0b0i/image/upload/v1749021096/houseoftales/cqxn5o58pee4j7cux8ls.webp",
+    mobile:
+      "https://res.cloudinary.com/djyfs0b0i/image/upload/v1749021103/houseoftales/cyb6rchirwi4yjmhads2.png",
   },
   "Manav & Karishma": {
-    desktop: "https://res.cloudinary.com/djyfs0b0i/image/upload/v1749021109/houseoftales/t77tt46q0z1avka6cvrf.webp",
-    mobile: "https://res.cloudinary.com/djyfs0b0i/image/upload/v1749021104/houseoftales/s3a91flhoeasmewhh7mh.png",
+    desktop:
+      "https://res.cloudinary.com/djyfs0b0i/image/upload/v1749021109/houseoftales/t77tt46q0z1avka6cvrf.webp",
+    mobile:
+      "https://res.cloudinary.com/djyfs0b0i/image/upload/v1749021104/houseoftales/s3a91flhoeasmewhh7mh.png",
   },
 };
 
 const CapturedTales = () => {
-  const [selectedCouple, setSelectedCouple] = useState<CoupleName>("Aditya & Riya");
+  const [selectedCouple, setSelectedCouple] =
+    useState<CoupleName>("Aditya & Riya");
   const [isImageLoaded, setIsImageLoaded] = useState(false);
   const selectedImages = coupleImages[selectedCouple];
 
@@ -66,7 +77,7 @@ const CapturedTales = () => {
           <button
             key={couple}
             onClick={() => setSelectedCouple(couple)}
-            className={`text-[21px] whitespace-nowrap cursor-pointer redHat text-[#34291E] transition-all duration-300 ease-in-out transform hover:scale-[1.02] hover:text-[#34291E] ${
+            className={`text-[21px] whitespace-nowrap cursor-pointer font-redHat text-[#34291E] transition-all duration-300 ease-in-out transform hover:scale-[1.02] hover:text-[#34291E] ${
               selectedCouple === couple ? "font-bold" : "font-normal"
             }`}
           >
@@ -87,7 +98,10 @@ const CapturedTales = () => {
           {/* Desktop */}
           <div className="hidden lg:block w-full relative">
             {!isImageLoaded && (
-              <Skeleton height={600} className="w-full rounded-xl bg-gray-400" />
+              <Skeleton
+                height={600}
+                className="w-full rounded-xl bg-gray-400"
+              />
             )}
             <Image
               src={selectedImages.desktop}

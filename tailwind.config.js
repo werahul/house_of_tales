@@ -8,7 +8,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        redHat: ['"Red Hat Display"', "sans-serif"],
+        redHat: ["Red Hat Display", "sans-serif"],
       },
     },
     screens: {

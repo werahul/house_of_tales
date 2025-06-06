@@ -8,6 +8,7 @@ import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import dayjs from "dayjs";
+import Image from "next/image";
 
 // Add global styles to handle autofill
 const globalStyles = `
@@ -72,6 +73,7 @@ const ContactForm = () => {
     phone: "",
     location: "",
     date: "",
+    endDate: "",
     days: "",
   });
   const [isOpen, setIsOpen] = useState(false);
@@ -112,7 +114,7 @@ const ContactForm = () => {
           phone: "",
           location: "",
           date: "",
-          days: "",
+          endDate: "",
         });
       } else {
         setNotification({
@@ -162,7 +164,7 @@ const ContactForm = () => {
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
         onSubmit={handleSubmit}
-        className="max-w-4xl w-full bg-transparent text-[#EAE7D8] redHat"
+        className="max-w-4xl w-full bg-transparent text-[#EAE7D8] font-redHat"
       >
         <motion.h2
           variants={fadeUp}
@@ -175,7 +177,7 @@ const ContactForm = () => {
         <motion.p
           variants={fadeUp}
           custom={1}
-          className="lg:text-center lg:text-[21px] text-[16px] leading-[24px] redHat mb-6 font-normal text-[#D3D0C2]"
+          className="lg:text-center lg:text-[21px] text-[16px] leading-[24px] font-redHat mb-0 font-normal text-[#D3D0C2]"
         >
           We aim to respond within 48 hours. If you do not hear from us{" "}
           <br className="lg:block hidden" /> or if it is an urgent inquiry,
@@ -185,12 +187,20 @@ const ContactForm = () => {
         <motion.div
           variants={fadeUp}
           custom={2}
-          className="flex justify-center mb-6 md:mb-10"
+          className="flex justify-center -mt-10 -ml-20"
         >
-          <img src="/Images/bridsVec.svg" alt="Doves Icon" />
+          <Image
+            src="/Images/contactsvg.png"
+            alt="Envelope Icon"
+            width={300}
+            quality={100}
+            height={200}
+            className="scale-150 h-auto"
+            priority
+          />
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 mt-20 gap-6">
           {[
             {
               label: "Full Name*",
@@ -235,7 +245,7 @@ const ContactForm = () => {
 
           <motion.div variants={fadeUp} custom={7}>
             <label className="block mb-1 text-[16px] lg:text-[21px] text-[#D3D0C2]">
-              Wedding Date*
+              Event Start Date*
             </label>
 
             <LocalizationProvider dateAdapter={AdapterDayjs}>
@@ -285,9 +295,61 @@ const ContactForm = () => {
               />
             </LocalizationProvider>
           </motion.div>
+          <motion.div variants={fadeUp} custom={7}>
+            <label className="block mb-1 text-[16px] lg:text-[21px] text-[#D3D0C2]">
+              Event End Date*
+            </label>
+
+            <LocalizationProvider dateAdapter={AdapterDayjs}>
+              <DatePicker
+                value={formData.endDate ? dayjs(formData.endDate) : null}
+                onChange={(newValue) =>
+                  setFormData((prev) => ({
+                    ...prev,
+                    endDate: newValue ? newValue.format("YYYY-MM-DD") : "",
+                  }))
+                }
+                slotProps={{
+                  textField: {
+                    variant: "standard",
+                    fullWidth: true,
+                    InputProps: {
+                      disableUnderline: true,
+                      sx: {
+                        color: "#D3D0C2",
+                        fontSize: "12px",
+                        borderBottom: "1px solid #D3D0C2",
+                        "& input": {
+                          color: "#D3D0C2",
+                          opacity: 1, // 💡 this affects placeholder + input text
+                        },
+                        "&:hover": {
+                          borderBottom: "1px solid #D3D0C2",
+                        },
+                        "&.Mui-focused": {
+                          borderBottom: "1px solid #D3D0C2",
+                        },
+                      },
+                    },
+                    InputLabelProps: {
+                      shrink: true,
+                      sx: {
+                        color: "#D3D0C2",
+                      },
+                    },
+                  },
+                  openPickerIcon: {
+                    sx: {
+                      color: "#D3D0C2",
+                    },
+                  },
+                }}
+              />
+            </LocalizationProvider>
+          </motion.div>
 
           {/* Custom Dropdown */}
-          <motion.div variants={fadeUp} custom={8}>
+          {/* <motion.div variants={fadeUp} custom={8}>
             <label className="block mb-0 text-[16px] lg:text-[21px]">
               No. of Days*
             </label>
@@ -337,7 +399,7 @@ const ContactForm = () => {
                 </div>
               )}
             </Listbox>
-          </motion.div>
+          </motion.div> */}
         </div>
 
         <motion.div variants={fadeUp} custom={9} className="text-left mt-12">

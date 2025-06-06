@@ -90,10 +90,10 @@ const BookingSteps: React.FC = () => {
             variants={itemVariants}
             custom={index}
           >
-            <h3 className="font-bold text-[16px] leading-[24px] mb-2 text-center redHat text-[#47463A] group-hover:text-white">
+            <h3 className="font-bold text-[16px] leading-[24px] mb-2 text-center font-redHat text-[#47463A] group-hover:text-white">
               {step.title}
             </h3>
-            <p className="font-normal text-center text-[16px] leading-[24px] redHat text-[#47463A] group-hover:text-white lg:w-[97%]">
+            <p className="font-normal text-center text-[16px] leading-[24px] font-redHat text-[#47463A] group-hover:text-white lg:w-[97%]">
               {step.description}
             </p>
           </motion.div>

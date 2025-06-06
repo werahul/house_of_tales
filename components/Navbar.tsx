@@ -70,7 +70,7 @@ const Navbar = () => {
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: -100, opacity: 0 }}
           transition={{ duration: 0.4, ease: "easeInOut" }}
-          className="lg:bg-white/20 bg-[#EAE7D8] lg:backdrop-blur-xs shadow-md fixed top-0 left-0 w-full z-50 redHat"
+          className="lg:bg-white/20 bg-[#EAE7D8] lg:backdrop-blur-xs shadow-md fixed top-0 left-0 w-full z-50 font-redHat"
         >
           <div className="w-full mx-auto px-4 sm:px-6 lg:px-10 navPadding h-[110px] pt-5 max-container">
             <div className="flex items-center justify-between h-16">
@@ -183,7 +183,6 @@ const Navbar = () => {
                         alt="Instagram Icon"
                         className="absolute inset-0 w-6 h-6 transition-opacity duration-300 ease-in-out opacity-100 group-hover:opacity-0"
                       />
-                     
                     </div>
                   </a>
                   <div className="lg:hidden pt-4">

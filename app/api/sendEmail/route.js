@@ -2,7 +2,7 @@ import nodemailer from "nodemailer";
 
 export async function POST(req) {
   const body = await req.json();
-  const { fullName, email, phone, location, date, days } = body;
+  const { fullName, email, phone, location, date, endDate } = body;
 
   const userEmail = process.env.NEXT_PUBLIC_USER_EMAIL;
   const userPassword = process.env.NEXT_PUBLIC_USER_PASSWORD;
@@ -18,6 +18,11 @@ export async function POST(req) {
     hour12: true,
   });
 
+  const days = Math.ceil(
+    (new Date(endDate).getTime() - new Date(date).getTime()) /
+      (1000 * 60 * 60 * 24)
+  );
+
   try {
     const transporter = nodemailer.createTransport({
       service: "gmail",
@@ -29,9 +34,9 @@ export async function POST(req) {
 
     const mailOptions = {
       from: `"House of Tales" <${userEmail}>`,
-      to: "ai.ronycode@gmail.com",
+      to: "heyhouseoftales@gmail.com",
       replyTo: email,
-      subject: `New Request from ${fullName}`,
+      subject: `New Event Request from ${fullName}`,
       html: `
         <!DOCTYPE html>
         <html>
@@ -109,8 +114,12 @@ export async function POST(req) {
                 <td>${location}</td>
               </tr>
               <tr>
-                <td class="label">Date:</td>
+                <td class="label">Event Start Date:</td>
                 <td>${date}</td>
+              </tr>
+              <tr>
+                <td class="label">Event End Date:</td>
+                <td>${endDate}</td>
               </tr>
               <tr>
                 <td class="label">No. of Days:</td>
