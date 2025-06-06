@@ -15,7 +15,7 @@ const Header = () => {
       setLoadVideo(true);
       return;
     }
-
+    // <a href="https://www.houseoftales.in" class="btn">Visit Our Website</a>
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
