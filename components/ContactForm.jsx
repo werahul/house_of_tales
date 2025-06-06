@@ -195,7 +195,7 @@ const ContactForm = () => {
             width={300}
             quality={100}
             height={100}
-            className="lg:scale-150 w-[220px] lg:w-[390px] scale-200 h-auto"
+            className="lg:scale-100 w-[200px] lg:w-[390px] scale-100 h-auto"
             priority
           />
         </motion.div>
