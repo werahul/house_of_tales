@@ -187,7 +187,7 @@ const ContactForm = () => {
         <motion.div
           variants={fadeUp}
           custom={2}
-          className="flex justify-center -mt-10 -ml-20"
+          className="flex justify-center mt-0 lg:-mt-10 -ml-5 lg:-ml-20"
         >
           <Image
             src="/Images/contactsvg.png"
@@ -195,12 +195,12 @@ const ContactForm = () => {
             width={300}
             quality={100}
             height={200}
-            className="scale-150 h-auto"
+            className="lg:scale-150 scale-100 h-auto"
             priority
           />
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 mt-20 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 mt-10 lg:mt-20 gap-6">
           {[
             {
               label: "Full Name*",
